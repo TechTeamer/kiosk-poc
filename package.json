@@ -1,10 +1,16 @@
 {
   "name": "kiosk-poc",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "main.js",
   "license": "MIT",
   "dependencies": {
     "node-dymo-printer": "^0.4.1",
     "node-hid": "^2.1.1"
+  },
+  "devDependencies": {
+    "electron": "^19.0.6"
+  },
+  "scripts": {
+    "start": "electron ."
   }
 }
