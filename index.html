@@ -4,12 +4,21 @@
     <meta charset="UTF-8">
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <link rel="stylesheet" type="text/css" href="main.css">
     <title>Hello World!</title>
 </head>
 <body>
 <button id="scale-btn" type="button">Mérleg</button>
 <button id="fingerprint-btn" type="button">Ujjlenyomat olvasó</button>
 <button id="printer-btn" type="button">Nyomtató</button>
+
+<div id="scaleContainer" class="hidden">
+    <h3>Mérleg</h3>
+    <p><span>Állapot: </span><span id="status">online</span></p>
+    <p><span>Aktuális súly: </span> <span id="weight">0</span> <span class="system">gramm</span></p>
+    <p id="messages" class="hidden"></p>
+</div>
+
 <script src="./renderer.js"></script>
 </body>
 </html>
