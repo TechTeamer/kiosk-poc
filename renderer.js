@@ -10,9 +10,12 @@ const scaleFinalWeight = scaleContainer.querySelector('#final_weight')
 const scaleMessages = scaleContainer.querySelector('#messages')
 
 function handleScaleMessages(event, msg) {
-    scaleMessages.innerText = msg
     scaleStatus.innerText = event
-    scaleMessages.classList.remove('hidden')
+
+    if(msg) {
+        scaleMessages.innerText = msg
+        scaleMessages.classList.remove('hidden')
+    }
 }
 
 function handleScaleUpdates(data) {
@@ -27,6 +30,7 @@ scaleButton.addEventListener('click', () => {
 
     window.electronAPI.callScale()
     window.electronAPI.onScaleUpdate((event, data) => {
+        handleScaleMessages('online')
         switch(data.message) {
             case 'weight-change':
                 // scaleWeight.innerText = data.data.value

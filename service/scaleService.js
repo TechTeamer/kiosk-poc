@@ -7,7 +7,7 @@ class ScaleService extends EventEmitter {
 
     this.device = null
     this.scaleIsActive = false
-    this.weight = {value: 0, unit: 'ounces', overweight: false}
+    this.weight = {value: 0, unit: 'grams', overweight: false}
     // this.init()
   }
 
@@ -17,15 +17,26 @@ class ScaleService extends EventEmitter {
         return
       }
 
-      this.device = new hid.HID('/dev/hidraw3')
+      // if (this.device) {
+      //   this.device.removeAllListeners()
+      //   this.device = null
+      //
+      //   // this.device.resume()
+      //   console.log('SEGG', this.device)
+      //   return
+      // }
+
+      // this.device = new hid.HID('/dev/hidraw3')
+      this.device = new hid.HID(2338, 32771)
 
       if (!this.device) {
-        this.emit('error', 'no-devices')
+        this.emit('error', 'no-device')
         return
       }
 
-      this.device.on('error', (data) => {
+      this.device.on('error', () => {
         this.scaleIsActive = false
+        // this.device.close()
         this.emit('end')
       })
 
@@ -75,11 +86,6 @@ class ScaleService extends EventEmitter {
           this.emit('overweight-change', overweight);
           change = true;
         }
-
-        if (change === true && this.weight.value === value && value) {
-          console.log('VEGSULY: ', value)
-        }
-
 
         // if (change === true) {
         //   this.emit('weight', weight);
