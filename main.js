@@ -2,6 +2,7 @@ const {app, BrowserWindow, ipcMain, dialog} = require('electron')
 const path = require('path')
 const {DymoServices, createImageWithText} = require('node-dymo-printer')
 const ScaleService = require('./service/scaleService')
+const twig = require('electron-twig')
 let mainWindow = null
 
 function createWindow () {
@@ -12,7 +13,7 @@ function createWindow () {
         }
     })
 
-    mainWindow.loadFile('index.html')
+    mainWindow.loadURL(`file://${__dirname}/client/ui/pages/main/main.html.twig`)
 }
 
 app.whenReady().then(() => {
@@ -21,6 +22,8 @@ app.whenReady().then(() => {
     ipcMain.handle('call-fingerprint-reader', handleCallFingerprintReader)
 
     ipcMain.handle('call-scale', handleCallScale)
+
+    ipcMain.handle('change-page', (event, page) => handlePageChange(page))
 
     createWindow()
 
@@ -107,4 +110,15 @@ function handleCallScale() {
     })
 
     ScaleService.init()
+}
+
+function handlePageChange(page) {
+    switch(page) {
+        case 'subpage1':
+            mainWindow.loadURL(`file://${__dirname}/client/ui/pages/subpage1/subpage1.html.twig`)
+            break
+        default:
+            mainWindow.loadURL(`file://${__dirname}/client/ui/pages/${page}/${page}.html.twig`)
+            break
+    }
 }
