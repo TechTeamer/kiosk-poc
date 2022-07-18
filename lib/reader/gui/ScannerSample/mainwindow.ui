@@ -1,0 +1,683 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1020</width>
+    <height>532</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Scanner Sample</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QTabWidget" name="tabOption">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>281</width>
+      <height>531</height>
+     </rect>
+    </property>
+    <property name="tabShape">
+     <enum>QTabWidget::Rounded</enum>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="tabOptions">
+     <attribute name="title">
+      <string>Options</string>
+     </attribute>
+     <widget class="QGroupBox" name="groupBoxDevices">
+      <property name="geometry">
+       <rect>
+        <x>6</x>
+        <y>0</y>
+        <width>261</width>
+        <height>161</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Devices</string>
+      </property>
+      <widget class="QListView" name="listViewDevices">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>241</width>
+         <height>71</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButtonConnect">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>110</y>
+         <width>91</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Connect</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButtonDisconnect">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>140</x>
+         <y>110</y>
+         <width>91</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Disconnect</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBoxImages">
+      <property name="geometry">
+       <rect>
+        <x>6</x>
+        <y>170</y>
+        <width>261</width>
+        <height>161</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Images</string>
+      </property>
+      <widget class="QListWidget" name="listWidgetLights">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>241</width>
+         <height>101</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="checkBoxDocView">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>130</y>
+         <width>161</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Crop and rotate document</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBoxOcr">
+      <property name="geometry">
+       <rect>
+        <x>6</x>
+        <y>340</y>
+        <width>261</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>OCR</string>
+      </property>
+      <widget class="QListWidget" name="listWidgetOCR">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>241</width>
+         <height>61</height>
+        </rect>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QPushButton" name="pushButtonStart">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>460</y>
+        <width>151</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Start</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QTabWidget" name="tabWidgetRight">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>0</y>
+      <width>731</width>
+      <height>531</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>1</number>
+    </property>
+    <widget class="QWidget" name="tabOCR">
+     <attribute name="title">
+      <string>OCR</string>
+     </attribute>
+     <widget class="QGroupBox" name="groupBoxFieldImage">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>435</y>
+        <width>708</width>
+        <height>64</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Field image</string>
+      </property>
+      <widget class="QLabel" name="labelFieldImagePicture">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>14</y>
+         <width>631</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="scaledContents">
+        <bool>false</bool>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QTableView" name="tableViewGrid">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>724</width>
+        <height>331</height>
+       </rect>
+      </property>
+      <property name="sortingEnabled">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="groupBoxValues">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>340</y>
+        <width>708</width>
+        <height>88</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Values</string>
+      </property>
+      <widget class="QLabel" name="labelRaw">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>46</width>
+         <height>13</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>RAW:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labelFormatted">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>40</y>
+         <width>61</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Formatted:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labelStandardized">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>60</y>
+         <width>71</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Standardized:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labelRAWValue">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>16</y>
+         <width>611</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labelFormattedValue">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>38</y>
+         <width>611</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labelStandardizedValue">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>58</y>
+         <width>611</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <zorder>labelRAWValue</zorder>
+      <zorder>labelRaw</zorder>
+      <zorder>labelFormatted</zorder>
+      <zorder>labelStandardized</zorder>
+      <zorder>labelFormattedValue</zorder>
+      <zorder>labelStandardizedValue</zorder>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tabData">
+     <attribute name="title">
+      <string>Data</string>
+     </attribute>
+     <widget class="QGroupBox" name="groupBoxPersonalData">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>0</y>
+        <width>571</width>
+        <height>161</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Personal Data</string>
+      </property>
+      <widget class="QLabel" name="labelTabName">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>46</width>
+         <height>13</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Name:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labelTabBirth">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>80</y>
+         <width>46</width>
+         <height>13</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Birth:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labelTabNationality">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>105</y>
+         <width>61</width>
+         <height>13</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Nationality:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labelTabSex">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>130</y>
+         <width>46</width>
+         <height>13</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Sex:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labelTabNameValue">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>30</y>
+         <width>485</width>
+         <height>13</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labelTabBirthValue">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>80</y>
+         <width>485</width>
+         <height>13</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labelTabNationalityValue">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>105</y>
+         <width>485</width>
+         <height>13</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labelTabSexValue">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>130</y>
+         <width>485</width>
+         <height>13</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labelTabNameValue2">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>56</y>
+         <width>485</width>
+         <height>13</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBoxDocumentData">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>170</y>
+        <width>571</width>
+        <height>161</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Document Data</string>
+      </property>
+      <widget class="QLabel" name="labelTabIssuer">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>41</width>
+         <height>13</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Issuer:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labelTabType">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>45</y>
+         <width>31</width>
+         <height>13</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Type:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labelTabPage">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>70</y>
+         <width>31</width>
+         <height>13</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Page:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labelTabNumber">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>95</y>
+         <width>46</width>
+         <height>13</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Number:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labelTabValid">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>120</y>
+         <width>31</width>
+         <height>13</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Valid:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labelTabIssuerValue">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>20</y>
+         <width>485</width>
+         <height>13</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labelTabTypeValue">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>45</y>
+         <width>485</width>
+         <height>13</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labelTabPageValue">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>70</y>
+         <width>485</width>
+         <height>13</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labelTabNumberValue">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>95</y>
+         <width>485</width>
+         <height>13</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="labelTabValidValue">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>120</y>
+         <width>485</width>
+         <height>13</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBoxSignature">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>340</y>
+        <width>571</width>
+        <height>161</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Signature</string>
+      </property>
+      <widget class="QLabel" name="labelTabSignaturePic">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>541</width>
+         <height>131</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="scaledContents">
+        <bool>false</bool>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBoxFacePhoto">
+      <property name="geometry">
+       <rect>
+        <x>594</x>
+        <y>0</y>
+        <width>126</width>
+        <height>161</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Face Photo</string>
+      </property>
+      <widget class="QLabel" name="labelTabFacePhotoPic">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>111</width>
+         <height>131</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="scaledContents">
+        <bool>false</bool>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,1 @@
+cmd_Release/obj.target/reader.node := g++ -o Release/obj.target/reader.node -shared -pthread -rdynamic -m64  -Wl,-soname=reader.node -Wl,--start-group Release/obj.target/reader/index.o -Wl,--end-group 
