@@ -1,0 +1,24 @@
+@keyframes loading-ring
+  0%
+    transform rotate(0deg)
+  100%
+    transform rotate(360deg)
+
+.loader
+  display none
+  width 30px
+  height 30px
+  border-radius 50%
+  border 5px solid rgba(51, 51, 51, 0.2)
+  border-top-color #333
+  animation loading-ring 1s infinite linear
+  margin -15px 0 0 -15px
+  position absolute
+  left 50%
+  top 50%
+
+.loading
+  position relative
+
+  .loader
+    display block

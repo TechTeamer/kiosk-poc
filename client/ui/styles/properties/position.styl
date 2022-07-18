@@ -1,0 +1,45 @@
+pos(to=null, width = 0, height = 0)
+  if to == fill || to == top || to == to-top || to == to-left || to == to-right
+    top: 0
+  if to == fill || to == left || to == to-left || to == to-top || to == to-bottom
+    left: 0
+  if to == fill || to == right || to == to-right || to == to-top || to == to-bottom
+    right: 0
+  if to == fill || to == bottom || to == to-bottom || to == to-left || to == to-right
+    bottom: 0
+  if to == vertical-center
+    to-vertical-center(width)
+  if to == horizontal-center
+    to-horizontal-center(width)
+  if to == middle
+    to-middle(width, height)
+
+absolute(to=null, width = 0, height = 0)
+  position: absolute
+  pos: to width height
+
+fixed(to=null, width = 0, height = 0)
+  position: fixed
+  pos: to width height
+
+to-horizontal-center(width)
+  left: 50%
+  margin-left: -(width/2)
+
+to-vertical-center(height)
+  top: 50%
+  margin-top: -(height/2)
+
+to-middle(width, height = width)
+  to-horizontal-center(width)
+  to-vertical-center(height)
+
+peek(from, size)
+  if from == from-bottom
+    top: "calc(100% - %s)" % size
+  if from == from-top
+    bottom: "calc(100% - %s)" % size
+  if from == from-left
+    right: "calc(100% - %s)" % size
+  if from == from-right
+    left: "calc(100% - %s)" % size

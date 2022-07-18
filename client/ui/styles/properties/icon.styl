@@ -1,0 +1,36 @@
+icon(font-family)
+  font-family font-family !important
+  speak none
+  font-style normal
+  font-weight normal
+  font-variant normal
+  text-transform none
+  line-height 1
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+
+icon-before(glyph, font-family)
+  &:before
+    {block}
+    icon(font-family)
+    content: glyph
+
+icon-after(glyph, font-family)
+  &:after
+    {block}
+    icon(font-family)
+    content: glyph
+
+icon-hover-before(glyph, font-family)
+  &:hover:before
+    {block}
+    icon(font-family)
+    content: glyph
+
+icon-hover-after(glyph, font-family)
+  &:hover:after
+    {block}
+    icon(font-family)
+    content: glyph

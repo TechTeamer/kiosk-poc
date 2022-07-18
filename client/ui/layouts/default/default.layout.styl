@@ -1,0 +1,95 @@
+@require '../../styles/imports/reset'
+@require '../../styles/imports/font'
+@require '../../styles/imports/flags'
+@require '../../styles/imports/loaders'
+@require "../../styles/properties/placeholder"
+
+placeholder(#ccc)
+
+html,
+body
+  height 100%
+
+body
+  line-height 18px
+  font-family 'OpenSans', sans-serif
+  font-size 14px
+  font-weight 400
+  position relative
+  color #333
+
+a
+  color #337ab7
+
+  &:hover
+    color #23527c
+
+ul
+ol
+  padding-left 30px
+
+pre
+  display block
+  padding 10px
+  margin 0 0 15px
+  font-size 13px
+  line-height 17px
+  color #333
+  word-break break-all
+  word-wrap break-word
+  white-space break-spaces
+  background-color #f5f5f5
+  border 1px solid #ccc
+
+.hidden
+  display none !important
+
+.svg-icon-container
+  position absolute
+  height 0
+  width 0
+  overflow hidden
+
+.font-grey
+  color #bfcad1 !important
+.font-primary
+  color #337ab7 !important
+.font-info
+  color #659be0 !important
+.font-success
+  color #26c281 !important
+.font-warning
+  color #f3c200 !important
+.font-danger
+  color #e7505a !important
+.font-red-soft
+  color #d05454 !important
+.font-purple
+  color #8e44ad !important
+
+.bg-grey
+  background-color #bfcad1 !important
+.bg-primary
+  background-color #337ab7 !important
+.bg-info
+  background-color #659be0 !important
+.bg-success
+  background-color #26c281 !important
+.bg-warning
+  background-color #f3c200 !important
+.bg-danger
+  background-color #e7505a !important
+.bg-red-soft
+  background-color #d05454 !important
+.bg-purple
+  background-color #8e44ad !important
+
+
+/* PRINT **************************************************************************************************************/
+@media print
+  body
+    height initial
+    overflow visible
+
+  .form-control
+    display block

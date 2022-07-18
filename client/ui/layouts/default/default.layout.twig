@@ -5,9 +5,13 @@
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <title>Hello World!</title>
+
+    {# layout stylesheet #}
+    <link rel="stylesheet" href="../../../../web/css/default/default.layout.css">
 </head>
 <body>
 {% block body %}{% endblock %}
 <script src="../../layouts/default.layout.js"></script>
+
 </body>
 </html>

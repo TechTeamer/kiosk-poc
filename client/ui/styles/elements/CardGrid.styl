@@ -1,0 +1,35 @@
+responsive-card-grid(card-width, card-gap, card-selector, grid-size, breakpoint, discount-with = 0, offset-width = 0)
+  {card-selector}
+    width: 100%
+    margin: (card-gap / 2) auto
+  padding: (card-gap / 2)
+  +media(breakpoint)
+    {card-selector}
+      width: card-width
+    apply-gap(card-gap, card-selector)
+    collection-sizer(card-width, card-gap, grid-size, discount-with, offset-width)
+
+CardGrid(card-width, card-gap, card-selector, grid-size, discount-with = 0, offset-width = 0)
+  apply-gap(card-gap, card-selector)
+  collection-sizer(card-width, card-gap, grid-size, discount-with, offset-width)
+
+// applies a gap onto a card layout
+// it assumes flex layout because there's no margin collapsing on flex boxes
+apply-gap(gap, selector)
+  {selector}
+    // half the gap between childs which doesn't collapse
+    margin: (gap / 2)
+  // half the gap on the container
+  padding: (gap / 2)
+
+
+// defines a number of media query variations that size a container
+// according to its children
+// it's useful to create centered card containers with left aligned children
+collection-sizer(base-width, gap, count, discount-with = 0, offset-width = 0)
+  width: auto
+  max-width: 100%
+  margin: 0 auto
+  for i in (1..count)
+    +media-plus(base-width, gap, i, discount-with)
+      width: calc-media-width(base-width, gap, i) + offset-width

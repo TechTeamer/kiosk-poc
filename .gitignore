@@ -1,2 +1,14 @@
 .idea
-node_modules
+.vscode
+node_modules/*
+/npm-debug.log*
+/yarn-error.log
+
+# generated static files
+/web/css
+/web/js
+/web/records
+/web/polyfills
+
+# for custom build
+yarn-offline-cache

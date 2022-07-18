@@ -1,0 +1,32 @@
+widescreen = 16/9
+widescreen-reverse = 9/16
+letterbox = 4/3
+letterbox-reverse = 3/4
+square = 1
+
+aspect-ratio(ratio = widescreen, width = 100%)
+  width: width
+
+  &:before
+    content: ""
+    display: block
+    width: 100%
+
+    if ratio == widescreen
+      padding-top: 100% * widescreen-reverse
+    else if ratio == letterbox
+      padding-top: 100% * letterbox-reverse
+    else if ratio == square
+      padding-top: 100%
+
+aspect-ratio-from-height(ratio = widescreen, height = 100%)
+  height: height
+  width: initial
+
+  &:before
+    content: ""
+    display: block
+    height: 100%
+    padding-left: 100% * ratio
+    padding-top: initial
+    width: initial

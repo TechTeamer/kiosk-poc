@@ -1,0 +1,31 @@
+gap(size, placement = inside, orientation = horizontal)
+  if placement == inside
+    if orientation == horizontal
+      margin-right: size
+      &:last-child
+        margin-right: 0
+    else if orientation == vertical
+      margin-bottom: size
+      &:last-child
+        margin-bottom: 0
+  else if placement == around
+    if orientation == horizontal
+      margin-right: size/2
+      margin-left: size/2
+      &:first-child
+        margin-left: size
+      &:last-child
+        margin-right: size
+      &:first-child:last-child
+        margin-left: 0
+        margin-right: 0
+    else if orientation == vertical
+      margin-top: size/2
+      margin-bottom: size/2
+      &:first-child
+        margin-top: size
+      &:last-child
+        margin-bottom: size
+      &:first-child:last-child
+        margin-top: 0
+        margin-bottom: 0

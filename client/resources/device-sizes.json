@@ -1,0 +1,12 @@
+{
+  "phonePortraitSize": 320,
+  "phoneLandscapeSize": 640,
+  "tabletPortraitSize": 768,
+  "tabletLandscapeSize": 1024,
+  "smallDesktopWidth": 1200,
+  "smallDesktopHeight": 600,
+  "mediumDesktopWidth": 1440,
+  "mediumDesktopHeight": 800,
+  "hdDesktopWidth": 1920,
+  "hdDesktopHeight": 1080
+}
