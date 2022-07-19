@@ -309,7 +309,7 @@ endif
 
 quiet_cmd_regen_makefile = ACTION Regenerating $@
 cmd_regen_makefile = cd $(srcdir); /usr/local/lib/node_modules/node-gyp/gyp/gyp_main.py -fmake --ignore-environment "-Dlibrary=shared_library" "-Dvisibility=default" "-Dnode_root_dir=/home/kzs/.cache/node-gyp/16.16.0" "-Dnode_gyp_dir=/usr/local/lib/node_modules/node-gyp" "-Dnode_lib_file=/home/kzs/.cache/node-gyp/16.16.0/<(target_arch)/node.lib" "-Dmodule_root_dir=/home/kzs/Documents/kiosk/kiosk-poc/lib/reader" "-Dnode_engine=v8" "--depth=." "-Goutput_dir=." "--generator-output=build" -I/home/kzs/Documents/kiosk/kiosk-poc/lib/reader/build/config.gypi -I/usr/local/lib/node_modules/node-gyp/addon.gypi -I/home/kzs/.cache/node-gyp/16.16.0/include/node/common.gypi "--toplevel-dir=." binding.gyp
-Makefile: $(srcdir)/../../../../../../../usr/local/lib/node_modules/node-gyp/addon.gypi $(srcdir)/build/config.gypi $(srcdir)/binding.gyp $(srcdir)/../../../../../.cache/node-gyp/16.16.0/include/node/common.gypi
+Makefile: $(srcdir)/build/config.gypi $(srcdir)/binding.gyp $(srcdir)/../../../../../../../usr/local/lib/node_modules/node-gyp/addon.gypi $(srcdir)/../../../../../.cache/node-gyp/16.16.0/include/node/common.gypi
 	$(call do_cmd,regen_makefile)
 
 # "all" is a concatenation of the "all" targets from all the included

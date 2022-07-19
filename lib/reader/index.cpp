@@ -11,7 +11,7 @@ using namespace Pr22::Processing;
 using namespace Pr22::Task;
 
 class EventHandler :  public Pr22::Events::DocEventHandler
-{  
+{
 
   public:
       explicit EventHandler() {}
@@ -31,12 +31,12 @@ class Reader : public Napi::ObjectWrap<Reader>
 {
   DocumentReaderDevice *pr;
   bool DocPresent;
-  Events::DocEventHandler eventHandler;
+  EventHandler* eventHandler;
 
   public:
-    static void Initialize(Napi::Env &env, Napi::Object &exports);  
+    static void Initialize(Napi::Env &env, Napi::Object &exports);
     bool DeviceIsConnected;
-    
+
     // void closeHandle();
 
     Reader(const Napi::CallbackInfo &info) : Napi::ObjectWrap<Reader>(info) {
@@ -65,7 +65,7 @@ class Reader : public Napi::ObjectWrap<Reader>
     }
 
     //------------------------------------------------------------------------------
-    
+
     void OnConnection(int devno)
     {
       std::wcout << L"Connection event. Device number: " << devno << std::endl;
@@ -145,7 +145,7 @@ Reader::Reader(const Napi::CallbackInfo &info)
 {
   Napi::Env env = info.Env();
   pr = NULL;
-  
+
 
   if (!info.IsConstructCall())
   {
@@ -163,14 +163,14 @@ Reader::Reader(const Napi::CallbackInfo &info)
 Napi::Value Reader::test(const Napi::CallbackInfo &info)
 {
   Napi::Env env = info.Env();
-  
+
   return Napi::String::New(env, "OK");
 }
 
 void Reader::Initialize(Napi::Env &env, Napi::Object &exports)
 {
   // napi_add_env_cleanup_hook(env, deinitialize, nullptr);
-  
+
   Napi::Function ctor = DefineClass(env, "Reader", {
                                                     InstanceMethod("test", &Reader::test)
                                                 });
