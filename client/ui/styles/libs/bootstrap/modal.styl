@@ -1,0 +1,117 @@
+.modal
+  .modal-dialog
+    margin 10px
+
+  .modal-content
+    border 0
+    border-radius 0
+
+    .modal-header
+      padding 15px 50px 15px 15px
+      border-bottom 1px solid modal-header-border-color
+      background-color modal-header-bg-color
+      text-align left
+      position relative
+
+      .modal-title
+        min-height 25px
+        margin 0
+        padding 1px 0
+        line-height 23px
+        font-size 18px
+        font-weight 700
+        text-transform none
+        color modal-header-text-color
+
+      .close
+        width 50px
+        height 55px
+        margin 0
+        padding 15px
+        line-height 25px
+        font-size 25px
+        color modal-header-close-color
+        position absolute
+        right 0
+        top 0
+
+    .modal-body
+      padding 15px
+
+    .modal-footer
+      padding 15px
+      border-top 1px solid modal-footer-border-color
+      background-color modal-footer-bg-color
+      color modal-footer-text-color
+
+      .btn+.btn
+        margin-left 10px
+
+    .modal-btn-container
+      padding 15px 0 5px
+      text-align center
+
+      .btn
+        min-width 120px
+
+
+/* TABLET *************************************************************************************************************/
+@media screen and (min-width: 768px)
+  .modal
+    .modal-dialog
+      width 600px
+      margin 80px auto
+
+    .modal-content
+      .modal-header
+        padding 20px 60px 20px 20px
+
+        .modal-title
+          min-height 35px
+          padding 4px 0
+          line-height 27px
+          font-size 22px
+
+        .close
+          width 60px
+          height 75px
+          padding 20px
+
+      .modal-body
+      .modal-footer
+        padding 20px
+
+      .modal-btn-container
+        padding 20px 0 10px
+
+
+/* LARGE TABLET *******************************************************************************************************/
+@media (min-device-width: 992px) and (max-device-width: 1366px) and (min-device-height: 1024px) and (-webkit-min-device-pixel-ratio: 2)
+  .modal
+    .modal-dialog
+      width 900px
+
+      .modal-content
+        .modal-header
+          padding 30px 100px 30px 30px
+
+          .modal-title
+            min-height 40px
+            padding 0
+            line-height 40px
+            font-size 36px
+
+          .close
+            width 100px
+            height 100px
+            padding 25px
+            line-height 50px
+            font-size 50px
+            opacity .3
+
+        .modal-body
+        .modal-footer
+          padding 30px
+
+        .modal-btn-container
+          padding 30px 0 20px

@@ -6,12 +6,27 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <title>Hello World!</title>
 
+    <link rel="stylesheet" href="../../../../web/libs/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../../web/libs/fontawesome/css/font.awesome.min.css">
     {# layout stylesheet #}
     <link rel="stylesheet" href="../../../../web/css/default/default.layout.css">
+
+    {% block style %}{% endblock %}
 </head>
 <body>
-{% block body %}{% endblock %}
+{% include '../../regions/header/header.twig' %}
+<div class="site-body">
+    {% block body %}{% endblock %}
+
+    <!-- FOOTER -->
+    {% include '../../regions/footer/footer.twig' %}
+    <!-- FOOTER END -->
+</div>
+
+<!--
 <script src="../../layouts/default.layout.js"></script>
+-->
+{% block javascript %}{% endblock %}
 
 </body>
 </html>

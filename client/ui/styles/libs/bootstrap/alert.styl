@@ -1,0 +1,195 @@
+.alert
+  display table
+  width 100%
+  height 50px
+  margin 0 0 15px
+  padding 5px 10px 5px 50px
+  border-radius 0
+  text-shadow none
+  text-align left
+  position relative
+
+  &.alert-dismissable
+    padding-right 50px
+
+    .close
+      width 50px
+      height 50px
+      text-align center
+      font-size 24px
+      position absolute
+      right -1px
+      top -1px
+
+  .icon
+    display block
+    width 30px
+    height 30px
+    line-height 30px
+    text-align center
+    font-size 30px
+    position absolute
+    left 10px
+    top 9px
+
+  svg.icon
+    fill page-text-color
+
+  .text
+    display table-cell
+    vertical-align middle
+    line-height 18px
+
+    a
+      text-decoration none
+      font-weight 700
+
+      &:hover
+        text-decoration underline
+
+  .text-block
+    display block
+    line-height 18px
+
+  .list
+    list-style-type disc
+    padding 0 0 0 25px
+
+  &.alert-info
+    background-color alert-info-bg-color
+    border-color alert-info-border-color
+    color alert-info-text-color
+
+    svg.icon
+      fill alert-info-text-color
+
+    .text
+      a
+        color alert-info-text-color
+
+  &.alert-success
+    background-color alert-success-bg-color
+    border-color alert-success-border-color
+    color alert-success-text-color
+
+    svg.icon
+      fill alert-success-text-color
+
+    .text
+      a
+        color alert-success-text-color
+
+  &.alert-warning
+    background-color alert-warning-bg-color
+    border-color alert-warning-border-color
+    color alert-warning-text-color
+
+    svg.icon
+      fill alert-warning-text-color
+
+    .text
+      a
+        color alert-warning-text-color
+
+  &.alert-danger
+    background-color alert-danger-bg-color
+    border-color alert-danger-border-color
+    color alert-danger-text-color
+
+    svg.icon
+      fill alert-danger-text-color
+
+    .text
+      a
+        color alert-danger-text-color
+
+  &.alert-bar
+    margin 0
+    box-shadow 0 0 10px 1px rgba(0,0,0,0.05)
+    position fixed
+    left 0
+    top -100%
+    z-index 10001
+    transition top 2s ease-in-out
+
+    &.show
+      display table !important
+      top 0
+
+
+/* TABLET *************************************************************************************************************/
+@media screen and (min-width: 768px)
+  .alert
+    margin 0 0 20px
+
+    &.alert-bar
+      height 70px
+      padding 15px 15px 15px 60px
+
+      .icon
+        left 15px
+        top 19px
+
+      &.alert-dismissable
+        padding-right 70px
+
+        .close
+          width 70px
+          height 70px
+          font-size 30px
+
+
+/* LARGE TABLET *******************************************************************************************************/
+@media (min-device-width: 992px) and (max-device-width: 1366px) and (min-device-height: 1024px) and (-webkit-min-device-pixel-ratio: 2)
+  .alert
+    height 80px
+    margin 0 0 25px
+    padding 9px 15px 9px 100px
+
+    .icon
+      width 60px
+      height 60px
+      line-height 60px
+      font-size 60px
+      left 15px
+
+    .text
+      line-height 30px
+
+
+/* DESKTOP ************************************************************************************************************/
+@media screen and (min-width: 992px) and (orientation: landscape)
+  .alert
+    margin 0 0 15px
+
+    &.alert-bar
+      display block
+      padding-left 70px
+      line-height 37px
+      text-align center
+
+      &.show
+        display block !important
+
+      .icon
+        display inline-block
+        vertical-align middle
+        margin 4px 10px 4px 0
+        position initial
+        left initial
+        top initial
+
+      .text
+        display inline-block
+        vertical-align middle
+        line-height 19px
+
+
+/* LARGE DESKTOP ******************************************************************************************************/
+@media screen and (min-width: 1200px) and (orientation: landscape)
+  .alert
+    margin 0 0 20px
+
+    &.alert-bar
+      .text
+        font-size 15px

@@ -1,0 +1,37 @@
+<div class="site-header">
+  <div class="site-header-inner">
+    <img class="site-logo original" src="{{ staticDir }}/img/svg/facekom-logo-lighttext.svg" alt="Logo" />
+    <img class="site-logo white" src="{{ staticDir }}/img/svg/facekom-logo-white.svg" alt="Logo" />
+    <ul class="site-header-menu">
+      {% if supportedLocales|length > 1 %}
+      <li class="menu-item">
+        <button class="btn btn-language dropdown-toggle"
+                data-toggle="dropdown"
+                data-hover="dropdown"
+                data-close-others="true"
+                title="{{ t.t('language_selection') }}">
+          <em class="flag flag-{{ lang }}"></em>
+          <span class="code">{{ lang }}</span>
+          <em class="arrow fa fa-angle-down"></em>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-default">
+          {% for locale in supportedLocales %}
+          <li>
+            <a class="btn btn-language" href="?lang={{ locale }}{% if selectedService %}&service={{ selectedService.name }}{% endif %}">
+              <em class="flag flag-{{ locale }}"></em>
+              <span class="code">{{ locale }}</span>
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </li>
+      {% endif %}
+      <!--
+      <li class="menu-item">
+        <button class="btn btn-high-contrast" title="{{ t.t('high_contrast_mode') }}">
+          <img src="{{ staticDir }}/img/icons/high-contrast.png" alt="{{ t.t('high_contrast_mode') }}"/>
+        </button>
+      </li> -->
+    </ul>
+  </div>
+</div>

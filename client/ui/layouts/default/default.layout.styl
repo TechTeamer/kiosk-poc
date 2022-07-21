@@ -4,6 +4,10 @@
 @require '../../styles/imports/loaders'
 @require "../../styles/properties/placeholder"
 
+@require "../../../../customization/ui/branding/styles/colors"
+
+@require "../../styles/libs/bootstrap/bootstrap"
+
 placeholder(#ccc)
 
 html,
@@ -12,34 +16,25 @@ body
 
 body
   line-height 18px
-  font-family 'OpenSans', sans-serif
+  font-family Sans-Serif
+  font-weight 300
   font-size 14px
-  font-weight 400
-  position relative
-  color #333
+  background page-bg-color
+  color page-text-color
 
 a
-  color #337ab7
+  color page-link-color
+  text-decoration underline
 
   &:hover
-    color #23527c
+  &:focus
+  &:active
+    color page-link-hover-color
 
-ul
-ol
-  padding-left 30px
-
-pre
-  display block
-  padding 10px
-  margin 0 0 15px
-  font-size 13px
-  line-height 17px
-  color #333
-  word-break break-all
-  word-wrap break-word
-  white-space break-spaces
-  background-color #f5f5f5
-  border 1px solid #ccc
+.site-body
+  min-height 100%
+  padding 70px 15px 270px
+  position relative
 
 .hidden
   display none !important
@@ -50,46 +45,40 @@ pre
   width 0
   overflow hidden
 
-.font-grey
-  color #bfcad1 !important
-.font-primary
-  color #337ab7 !important
-.font-info
-  color #659be0 !important
-.font-success
-  color #26c281 !important
-.font-warning
-  color #f3c200 !important
-.font-danger
-  color #e7505a !important
-.font-red-soft
-  color #d05454 !important
-.font-purple
-  color #8e44ad !important
 
-.bg-grey
-  background-color #bfcad1 !important
-.bg-primary
-  background-color #337ab7 !important
-.bg-info
-  background-color #659be0 !important
-.bg-success
-  background-color #26c281 !important
-.bg-warning
-  background-color #f3c200 !important
-.bg-danger
-  background-color #e7505a !important
-.bg-red-soft
-  background-color #d05454 !important
-.bg-purple
-  background-color #8e44ad !important
+/* TABLET *************************************************************************************************************/
+@media screen and (min-width: 768px)
+  .site-body
+    padding 100px 30px 200px
 
 
-/* PRINT **************************************************************************************************************/
-@media print
+/* LARGE TABLET *******************************************************************************************************/
+@media (min-device-width: 992px) and (max-device-width: 1366px) and (min-device-height: 1024px) and (-webkit-min-device-pixel-ratio: 2)
   body
-    height initial
-    overflow visible
+    line-height 30px
+    font-size 25px
 
-  .form-control
-    display block
+  .site-body
+    padding 130px 30px 280px
+
+
+/* DESKTOP ************************************************************************************************************/
+@media screen and (min-width: 992px) and (orientation: landscape)
+  .site-body
+    padding 100px 30px 170px
+
+
+/* LARGE DESKTOP ******************************************************************************************************/
+@media screen and (min-width: 1200px) and (orientation: landscape)
+  .site-body
+    padding 100px 0
+
+
+/* LARGE TABLET LANDSCAPE *********************************************************************************************/
+@media  (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2)
+  .site-body
+    padding 110px 30px 220px
+
+
+
+@require "../../../../customization/ui/branding/layouts/default.layout.branding.styl"

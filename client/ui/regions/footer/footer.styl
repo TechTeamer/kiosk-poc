@@ -1,0 +1,137 @@
+.site-footer
+  width 100%
+  margin 0
+  padding 10px
+  text-align center
+  background-color footer-bg-color
+  color footer-text-color
+  position absolute
+  bottom 0
+  left 0
+  right 0
+
+  .site-footer-inner
+    &:after
+      display table
+      content ''
+      clear both
+      float none
+
+  .site-footer-menu
+    padding 15px 0 0
+    margin 0 0 15px
+
+    .menu-item
+      display block
+
+    .menu-link
+      display inline-block
+      padding 6px 0
+      color footer-link-color
+      text-decoration none
+      transition color .5s
+
+      &:hover
+        text-decoration underline
+        color footer-link-hover-color
+
+
+/* TABLET *************************************************************************************************************/
+@media screen and (min-width: 768px)
+  .site-footer
+    padding 15px 20px
+
+    p
+      margin 15px 0 0
+
+    .site-footer-menu
+      width 540px
+      padding 10px 0 0
+      margin 0 auto 20px
+
+      .menu-item
+        display inline-block
+        padding 0 10px
+
+
+/* LARGE TABLET *******************************************************************************************************/
+@media (min-device-width: 992px) and (max-device-width: 1366px) and (min-device-height: 1024px) and (-webkit-min-device-pixel-ratio: 2)
+  .site-footer
+    padding 20px 30px
+
+    .site-footer-menu
+      width 850px
+
+      .menu-item
+        padding 0 15px
+
+        .menu-link
+          padding 10px 0
+
+    p
+      margin 30px 0 10px
+
+
+/* DESKTOP ************************************************************************************************************/
+@media screen and (min-width: 992px) and (orientation: landscape)
+  .site-footer
+    .site-footer-menu
+      width 100%
+
+
+/* LARGE DESKTOP ******************************************************************************************************/
+@media screen and (min-width: 1200px) and (orientation: landscape)
+  .site-footer
+    height 50px
+    padding 0
+
+    .site-footer-inner
+      width 1150px
+      margin auto
+      padding 5px 20px
+
+      p
+        float left
+        margin 10px 0
+        line-height 20px
+
+      .site-footer-menu
+        float right
+        width auto
+        margin -5px 0
+        padding 5px 0
+        overflow hidden
+
+        .menu-item
+          float left
+          padding 0 0 0 20px
+
+          .menu-link
+            padding 10px 0
+            line-height 20px
+
+
+/* LARGE TABLET LANDSCAPE *********************************************************************************************/
+@media  (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2)
+  .site-footer
+    height auto
+    padding 20px 30px
+
+    .site-footer-inner
+      width 100%
+      padding 0
+
+      .site-footer-menu
+        float none
+        width 100%
+        margin 0 auto 20px
+        padding 10px 0 0
+
+        .menu-item
+          float none
+          padding 0 15px
+
+      p
+        float none
+        margin 30px 0 10px
+        line-height 30px

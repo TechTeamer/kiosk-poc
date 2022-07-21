@@ -1,0 +1,326 @@
+@keyframes loading-ring
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
+
+.btn
+  padding 9px 15px
+  border 1px solid transparent
+  border-radius 0
+  line-height 20px
+  font-size 14px
+  font-weight 400
+  text-shadow none
+  text-decoration none
+  outline none
+  box-shadow none
+  white-space normal
+  transition border-color ease-in-out .15s,background-color ease-in-out .15s
+  position relative
+
+  &:focus,
+  &:active:focus
+    outline none
+
+  .icon
+    display inline-block
+    vertical-align middle
+    margin -9px 10px -9px 0
+    font-size 20px
+
+  .loader
+    display none
+    width 26px
+    height 26px
+    border-radius 50%
+    border 5px solid loading-animation-rgba-color
+    border-top-color loading-animation-color
+    animation loading-ring 1s infinite linear
+    margin -13px 0 0 -13px
+    position absolute
+    left 50%
+    top 50%
+
+  &.loading
+    .loader
+      display block
+
+.btn-xs
+  padding 5px 10px
+  line-height 18px
+
+  .icon
+    margin -5px 7px -5px 0
+    font-size 14px
+
+  .loader
+    width 20px
+    height 20px
+    margin -10px 0 0 -10px
+    border-width 4px
+
+.btn-lg
+  padding 14px 30px
+  text-transform uppercase
+  font-weight 700
+  font-size 15px
+
+  .icon
+    margin -14px 15px -14px 0
+
+  .loader
+    width 30px
+    height 30px
+    margin -15px 0 0 -15px
+
+
+/* PRIMARY ************************************************************************************************************/
+.btn-primary
+  background-color btn-primary-bg-color
+  border-color btn-primary-border-color
+  color btn-primary-text-color
+
+  &.loading
+    background-color btn-primary-bg-color
+    border-color btn-primary-bg-color
+    color btn-primary-bg-color
+
+  &:focus
+    background-color btn-primary-bg-color
+    border-color btn-primary-border-color
+    color btn-primary-text-color
+
+    &.loading
+      background-color btn-primary-bg-color
+      border-color btn-primary-bg-color
+      color btn-primary-bg-color
+
+  &:hover
+  &:active
+  &:active:focus
+  &:active:hover
+    background-color btn-primary-hover-bg-color
+    border-color btn-primary-hover-border-color
+    color btn-primary-hover-text-color
+
+    &.loading
+      background-color btn-primary-bg-color
+      border-color btn-primary-bg-color
+      color btn-primary-bg-color
+
+
+/* SECONDARY **********************************************************************************************************/
+.btn-secondary
+  background-color btn-secondary-bg-color
+  border-color btn-secondary-border-color
+  color btn-secondary-text-color
+
+  &.loading
+    background-color btn-secondary-bg-color
+    border-color btn-secondary-border-color
+    color btn-secondary-bg-color
+
+  &:focus
+    background-color btn-secondary-bg-color
+    border-color btn-secondary-border-color
+    color btn-secondary-text-color
+
+    &.loading
+      background-color btn-secondary-bg-color
+      border-color btn-secondary-border-color
+      color btn-secondary-bg-color
+
+  &:hover
+  &:active
+  &:active:focus
+  &:active:hover
+    background-color btn-secondary-hover-bg-color
+    border-color btn-secondary-hover-border-color
+    color btn-secondary-hover-text-color
+
+    &.loading
+      background-color btn-secondary-bg-color
+      border-color btn-secondary-border-color
+      color btn-secondary-bg-color
+
+
+/* INFO ***************************************************************************************************************/
+.btn-info
+  background-color btn-info-bg-color
+  border-color btn-info-border-color
+  color btn-info-text-color
+
+  &:hover
+  &:focus
+  &:active
+  &:active:focus
+  &:active:hover
+    background-color btn-info-hover-bg-color
+    border-color btn-info-hover-border-color
+    color btn-info-hover-text-color
+
+    &.loading
+      background-color btn-info-bg-color
+      border-color btn-info-border-color
+      color btn-info-bg-color
+
+
+/* DANGER *************************************************************************************************************/
+.btn-danger
+  background-color btn-danger-bg-color
+  border-color btn-danger-border-color
+  color btn-danger-text-color
+
+  &:hover
+  &:focus
+  &:active
+  &:active:focus
+  &:active:hover
+    background-color btn-danger-hover-bg-color
+    border-color btn-danger-hover-border-color
+    color btn-danger-hover-text-color
+
+    &.loading
+      background-color btn-danger-bg-color
+      border-color btn-danger-border-color
+      color btn-danger-bg-color
+
+
+/* WARNING ************************************************************************************************************/
+.btn-warning
+  background-color btn-warning-bg-color
+  border-color btn-warning-border-color
+  color btn-warning-text-color
+
+  &:hover
+  &:focus
+  &:active
+  &:active:focus
+  &:active:hover
+    background-color btn-warning-hover-bg-color
+    border-color btn-warning-hover-border-color
+    color btn-warning-hover-text-color
+
+    &.loading
+      background-color btn-warning-bg-color
+      border-color btn-warning-border-color
+      color btn-warning-bg-color
+
+
+/* SUCCESS ************************************************************************************************************/
+.btn-success
+  background-color btn-success-bg-color
+  border-color btn-success-border-color
+  color btn-success-text-color
+
+  &:hover
+  &:focus
+  &:active
+  &:active:focus
+  &:active:hover
+    background-color btn-success-hover-bg-color
+    border-color btn-success-hover-border-color
+    color btn-success-hover-text-color
+
+    &.loading
+      background-color btn-success-bg-color
+      border-color btn-success-border-color
+      color btn-success-bg-color
+
+
+/* LINK ***************************************************************************************************************/
+.btn-link
+  background-color btn-link-bg-color
+  border-color btn-link-border-color
+  color btn-link-text-color
+  text-decoration underline
+
+  &:hover
+  &:focus
+  &:active
+  &:active:focus
+  &:active:hover
+    background-color btn-link-hover-bg-color
+    border-color btn-link-hover-border-color
+    color btn-link-hover-text-color
+
+
+/* DISABLED ***********************************************************************************************************/
+.btn.disabled
+.btn[disabled]
+fieldset[disabled] .btn
+  background-color btn-disabled-bg-color
+  border-color btn-disabled-border-color
+  color btn-disabled-text-color
+  text-decoration none
+  cursor not-allowed
+
+  &.loading
+    background-color btn-disabled-bg-color
+    border-color btn-disabled-bg-color
+    color btn-disabled-bg-color
+
+  &:hover
+  &:focus
+  &:active
+  &:active:focus
+  &:active:hover
+    background-color btn-disabled-bg-color
+    border-color btn-disabled-border-color
+    color btn-disabled-text-color
+
+    &.loading
+      background-color btn-disabled-bg-color
+      border-color btn-disabled-bg-color
+      color btn-disabled-bg-color
+
+
+/* LARGE TABLET *******************************************************************************************************/
+@media (min-device-width: 992px) and (max-device-width: 1366px) and (min-device-height: 1024px) and (-webkit-min-device-pixel-ratio: 2)
+  .btn
+    min-height 70px
+    border-width 2px
+    padding 18px 25px
+    line-height 30px
+    font-size 25px
+
+    .icon
+      margin -20px 15px -18px 0
+      font-size 26px
+
+    .loader
+      width 40px
+      height 40px
+      margin -20px 0 0 -20px
+      border-width 8px
+
+  .btn-xs
+    min-height 50px
+    padding 11px 20px
+    line-height 24px
+    font-size 20px
+
+    .icon
+      margin -13px 15px -11px 0
+      font-size 24px
+
+    .loader
+      width 30px
+      height 30px
+      margin -15px 0 0 -15px
+      border-width 6px
+
+  .btn-lg
+    min-height 90px
+    padding 28px 35px
+
+    .icon
+      margin -30px 20px -28px 0
+      font-size 33px
+
+    .loader
+      width 60px
+      height 60px
+      margin -30px 0 0 -30px
+      border-width 10px

@@ -1,0 +1,258 @@
+@require "../../../../client/ui/regions/header/header.styl"
+
+
+.site-header
+  width 100%
+  height 50px
+  background-color header-bg-color
+  padding 10px
+  position absolute
+  top 0
+  left 0
+  right 0
+  z-index 10
+
+  &:after
+    display table
+    content ''
+    float none
+    clear both
+
+  .site-logo
+    display inline-block
+    height 30px
+
+    &.white
+      display none
+
+  .site-header-menu
+    float right
+    margin -10px -10px -10px 0
+    padding 0
+    list-style none
+
+    &:after
+      display table
+      content ''
+      float none
+      clear both
+
+    .menu-item
+      float left
+
+      &.open
+        .dropdown-toggle
+          background-color header-btn-bg-hover-color
+
+    .btn
+      height 50px
+      padding 10px
+      border 0
+      line-height 20px
+      border-left 1px solid header-btn-border-color
+      background-color header-btn-bg-color
+      color header-btn-text-color
+      border-radius 0
+
+      &:hover
+        background-color header-btn-hover-bg-color
+        border-color header-btn-hover-border-color
+        color header-btn-hover-text-color
+
+    .btn-language
+      text-transform uppercase
+
+      &:after
+        display table
+        content ''
+        float none
+        clear both
+
+      .flag
+        display block
+        float left
+        margin -1px 0
+
+      .code
+        display none
+        float left
+        margin 5px 0
+
+      .arrow
+        width 11px
+        margin 5px 0 5px 9px
+        line-height 20px
+        font-size 16px
+
+    .btn-high-contrast
+      img
+        display block
+        width 30px
+        height 30px
+
+    .dropdown-menu
+      width 100%
+      min-width auto
+      margin 0
+      padding 0
+      border 0
+      border-radius 0
+      box-shadow none
+
+      .btn
+        margin 0 -1px 0 0
+        border-width 1px 0 0
+        border-style solid
+        background-color header-dropdown-btn-bg-color
+        border-color header-dropdown-btn-border-color
+        color header-dropdown-btn-text-color
+
+        &:hover
+          background-color header-dropdown-btn-hover-bg-color
+          border-color header-dropdown-btn-hover-border-color
+          color header-dropdown-btn-hover-text-color
+
+    .dropdown-toggle
+      background-color header-dropdown-toggle-bg-color
+      border-color header-dropdown-toggle-border-color
+      color header-dropdown-toggle-text-color
+
+      &:hover
+        background-color header-dropdown-toggle-hover-bg-color
+        border-color header-dropdown-toggle-hover-border-color
+        color header-dropdown-toggle-hover-text-color
+
+    .open
+      .dropdown-toggle
+        background-color header-dropdown-toggle-active-bg-color
+        border-color header-dropdown-toggle-active-border-color
+        color header-dropdown-toggle-active-text-color
+
+
+/* LARGE MOBILE *******************************************************************************************************/
+@media screen and (min-width: 370px)
+  .site-header
+    .site-header-menu
+      .btn-language
+        .flag
+          margin-right 10px
+
+        .code
+          display block
+
+
+/* TABLET *************************************************************************************************************/
+@media screen and (min-width: 768px) and (min-height: 768px)
+  .site-header
+    height 70px
+    padding 15px
+
+    .site-logo
+      height 40px
+
+    .site-header-menu
+      margin -15px -15px -15px 0
+
+      .btn
+        height 70px
+        padding 15px
+
+      .btn-language
+        .flag
+          margin 4px 10px 4px 0
+
+        .code
+          margin 10px 0
+
+        .arrow
+          margin 10px 0 10px 9px
+
+      .btn-high-contrast
+        img
+          width 40px
+          height 40px
+
+      .dropdown-menu
+        .btn
+          height auto
+          padding 10px 15px
+
+
+/* LARGE TABLET *******************************************************************************************************/
+@media (min-device-width: 992px) and (max-device-width: 1366px) and (min-device-height: 1024px) and (-webkit-min-device-pixel-ratio: 2)
+  .site-header
+    height 100px
+    padding 20px
+
+    .site-logo
+      height 60px
+
+    .site-header-menu
+      margin -20px -20px -20px 0
+
+      .btn
+        height 100px
+        padding 25px
+        line-height 30px
+        font-size 25px
+
+      .btn-language
+        .flag
+          margin 9px 10px 9px 0
+
+        .arrow
+          width 15px
+          font-size 25px
+          line-height 30px
+
+      .btn-high-contrast
+        img
+          width 50px
+          height 50px
+
+
+/* LARGE DESKTOP ******************************************************************************************************/
+@media screen and (min-width: 1200px) and (min-height: 768px) and (orientation: landscape)
+  .site-header
+    padding 0
+
+    .site-header-inner
+      width 1150px
+      margin auto
+      padding 15px
+
+    .site-header-menu
+      border-right 1px solid header-btn-border-color
+
+/* LARGE TABLET LANDSCAPE *********************************************************************************************/
+@media  (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2)
+  .site-header
+    padding 0
+    height 80px
+
+    .site-logo
+      height 40px
+
+    .site-header-inner
+      width 100%
+      padding 20px
+
+    .site-header-menu
+      margin -20px -20px -20px 0
+
+      .btn
+        padding 20px
+        height 80px
+
+      .btn-high-contrast
+        img
+          width 40px
+          height 40px
+
+      .btn-language
+        .flag,
+        .code,
+        .arrow
+          margin-top 5px
+          margin-bottom 5px
+          line-height 32px

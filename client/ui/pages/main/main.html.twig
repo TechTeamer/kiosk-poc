@@ -1,7 +1,105 @@
+{% block style %}
+  <link rel="stylesheet" href="../../../../web/css/main/main.style.css">
+{% endblock %}
+
+{% set title = t.t('page_title') %}
+{% set pageVisitId = 'payment_demo_start' %}
+
 {% extends '../../layouts/default/default.layout.twig' %}
+
 {% block body %}
-    <div class="page-selector" data-page="subpage1">Subpage 1</div>
-    <div class="page-selector" data-page="subpage2">Subpage 2</div>
-    <div class="page-selector" data-page="subpage3">Subpage 3</div>
+  <figure class="image-container">
+    <div class="inner">
+      <p class="text">{{ t.t('image_text') }}</p>
+    </div>
+  </figure>
+
+  <div class="panel">
+    <div class="panel-body">
+      <p class="text">{{ t.t('menu_primary_text') }}</p>
+      <ul class="menu menu-primary">
+        <li class="menu-item">
+          <button class="btn btn-primary btn-lg" type="button">
+            <em class="icon fa fa-clock-o"></em>
+            <span class="text">{{ t.t('menu_item_real_time_identification') }}</span>
+          </button>
+        </li>
+        <li class="menu-item">
+          <button class="btn btn-primary btn-lg" type="button">
+            <em class="icon fa fa-cogs"></em>
+            <span class="text">{{ t.t('menu_item_non_real_time_identification') }}</span>
+          </button>
+        </li>
+        <li class="menu-item">
+          <button class="btn btn-primary btn-lg" type="button">
+            <em class="icon fa fa-user-circle-o"></em>
+            <span class="text">{{ t.t('menu_item_face_photo') }}</span>
+          </button>
+        </li>
+        <li class="menu-item">
+          <a class="btn btn-primary btn-lg" href="/post-demo-start">
+            <em class="icon fa fa-envelope-o"></em>
+            <span class="text">{{ t.t('menu_item_post_demo') }}</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-body">
+      <p class="text">{{ t.t('menu_secondary_text') }}</p>
+      <ul class="menu menu-primary">
+        <li class="menu-item">
+          <a class="btn btn-secondary btn-lg" href="/payment-start">
+            <em class="icon fa fa-credit-card"></em>
+            <span class="text">{{ t.t('menu_item_pos_payment_demo') }}</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a class="btn btn-secondary btn-lg" href="/fingerprint-scan-start">
+            <em class="icon fa fa-hand-paper-o"></em>
+            <span class="text">{{ t.t('menu_item_fingerprint_reading') }}</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a class="btn btn-secondary btn-lg" href="/document-scan-start">
+            <em class="icon fa fa-sign-in"></em>
+            <span class="text">{{ t.t('menu_item_document_scanning') }}</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a class="btn btn-secondary btn-lg" href="/face-identification-photo">
+            <em class="icon fa fa-user-circle-o"></em>
+            <span class="text">{{ t.t('menu_item_face_recognition_module') }}</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a class="btn btn-secondary btn-lg" href="/liveness-start">
+            <em class="icon fa fa-eye"></em>
+            <span class="text">{{ t.t('menu_item_liveness_check') }}</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a class="btn btn-secondary btn-lg" href="/weighing-start">
+            <em class="icon fa fa-hdd-o"></em>
+            <span class="text">{{ t.t('menu_item_weighing') }}</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a class="btn btn-secondary btn-lg" href="/document-print-start">
+            <em class="icon fa fa-print"></em>
+            <span class="text">{{ t.t('menu_item_a4_printing') }}</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a class="btn btn-secondary btn-lg" href="/label-print-start">
+            <em class="icon fa fa-tag"></em>
+            <span class="text">{{ t.t('menu_item_label_printing') }}</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
 {% endblock %}
 

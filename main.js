@@ -13,7 +13,15 @@ function createWindow () {
         }
     })
 
-    mainWindow.loadURL(`file://${__dirname}/client/ui/pages/main/main.html.twig`)
+    mainWindow.webContents.openDevTools();
+
+    mainWindow.loadURL(`file://${__dirname}/client/ui/pages/main/main.html.twig`);
+    twig.view = {
+        staticDir: __dirname + '/web',
+        t: {
+            t: function () { return " " }
+        }
+    }
 }
 
 app.whenReady().then(() => {

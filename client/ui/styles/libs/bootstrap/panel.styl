@@ -1,0 +1,252 @@
+.panel
+  width 100%
+  max-width 1150px
+  margin 0 auto 20px
+  border 0
+  border-radius 0
+  background-color panel-bg-color
+  box-shadow 0 0 10px 1px rgba(0,0,0,.05)
+  color panel-text-color
+
+  .panel-heading
+    padding 15px 15px 0
+    border 0
+    text-align center
+
+    .panel-title
+      margin 0
+      padding 1px 0
+      line-height 23px
+      font-size 18px
+      font-weight 700
+      text-transform none
+      color panel-title-color
+
+  .panel-body
+    padding 15px 15px 20px
+    text-align left
+
+    .panel-body-title
+      margin 0 -15px 15px
+      padding 11px 15px
+      border-width 0
+      border-style solid
+      border-color panel-body-title-border-color
+      background-color panel-body-title-bg-color
+      color panel-body-title-text-color
+      line-height 18px
+      font-size 14px
+      font-weight 700
+
+      .btn
+        background-color panel-body-title-btn-bg-color
+        border-color panel-body-title-btn-border-color
+        color panel-body-title-btn-text-color
+
+        &:hover
+          background-color panel-body-title-btn-hover-bg-color
+
+    .panel-body-inner
+      padding 15px 10px
+      text-align center
+      background-color panel-body-inner-bg-color
+      color panel-body-inner-text-color
+
+    .panel-box
+      margin 0 -15px 15px
+      padding 15px
+      background-color panel-box-bg-color
+      color panel-box-text-color
+      text-align center
+
+      .panel-box-icon
+        display inline-block
+        width 80px
+        height 80px
+        font-size 80px
+
+      .panel-box-text
+        margin 15px 0 0
+        font-weight 700
+        font-size 15px
+
+      .panel-box-table
+        width 100%
+
+        tr
+          height 30px
+
+          td
+            line-height 20px
+            font-weight 700
+            font-size 15px
+
+    .panel-info
+      margin 0 0 15px
+      padding 15px
+      background-color panel-info-message-bg-color
+      color panel-info-message-text-color
+      text-align center
+
+      p:last-child
+        margin 0
+
+  .panel-footer
+    padding 0 15px 20px
+    border-top 0
+    text-align center
+    background-color panel-bg-color
+
+    .btn
+      display block
+      margin 15px auto 0
+
+      &:first-child
+        margin 0 auto
+
+  .panel-btn-container
+    margin 0 -10px
+    padding 5px 0
+    text-align center
+
+    .btn
+      margin 15px 10px 0
+
+
+/* LARGE MOBILE *******************************************************************************************************/
+@media screen and (min-width: 370px)
+  .panel
+    .panel-body
+      .panel-body-inner
+        padding 20px 15px
+
+
+/* TABLET *************************************************************************************************************/
+@media screen and (min-width: 768px)
+  .panel
+    .panel-heading
+      padding 20px 20px 0
+
+      .panel-title
+        padding 4px 0
+        line-height 27px
+        font-size 22px
+
+    .panel-body
+      padding 20px 20px 30px
+
+      .panel-body-title
+        margin 0 -20px 15px
+        padding 11px 20px
+
+      .panel-body-inner
+        padding 20px
+
+      .panel-box
+        margin 0 -20px 20px
+        padding 20px
+
+      .panel-info
+        margin 0 0 20px
+        padding 20px
+
+    .panel-footer
+      padding 0 20px 30px
+
+      .btn
+        display inline-block
+        margin 0 10px
+
+        &:first-child
+          margin 0 10px
+
+    .panel-btn-container
+      padding 15px 0 10px
+
+
+/* LARGE TABLET *******************************************************************************************************/
+@media (min-device-width: 992px) and (max-device-width: 1366px) and (min-device-height: 1024px) and (-webkit-min-device-pixel-ratio: 2)
+  .panel
+    max-width 100%
+    margin-bottom 30px
+
+    .panel-heading
+      padding 30px 30px 0
+
+      .panel-title
+        padding 5px 0
+        line-height 40px
+        font-size 36px
+
+    .panel-body
+      padding 30px
+
+      .panel-body-title
+        margin 0 -30px 30px
+        padding 15px 30px
+        line-height 30px
+        font-size 25px
+
+      .panel-body-inner
+        padding 30px
+
+      .panel-box
+        margin 0 -30px 30px
+        padding 30px
+
+        .panel-box-icon
+          width 160px
+          height 160px
+          font-size 160px
+
+        .panel-box-text
+          margin 30px 0 0
+          line-height 30px
+          font-size 26px
+
+        .panel-box-table
+          tr
+            height 55px
+
+            td
+              line-height 35px
+              font-size 30px
+
+    .panel-footer
+      padding 0 30px 30px
+
+    .panel-btn-container
+      padding 10px 0 30px
+
+      .btn
+        margin 20px 15px 0
+
+
+/* DESKTOP ************************************************************************************************************/
+@media screen and (min-width: 992px) and (orientation: landscape)
+  .panel
+    .panel-heading
+      padding 30px 30px 0
+
+    .panel-body
+      padding 30px
+
+      .panel-body-title
+        margin 0 -30px 20px
+        padding 11px 30px
+
+      .panel-body-inner
+        padding 30px
+
+      .panel-box
+        margin 0 -30px 30px
+        padding 30px
+
+    .panel-footer
+      padding 0 30px 30px
+
+
+/* LARGE DESKTOP ******************************************************************************************************/
+@media screen and (min-width: 1200px) and (orientation: landscape)
+  .panel
+    margin-bottom 30px

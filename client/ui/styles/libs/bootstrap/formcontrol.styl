@@ -1,0 +1,863 @@
+.form-group
+  margin-bottom 10px
+  position relative
+  text-align left
+
+  .control-label
+    line-height 18px
+    font-size 14px
+    font-weight 400
+    color form-label-text-color
+
+    &:after
+      content ':'
+
+    span
+      &:before
+        content ' '
+
+  .error-message
+    display none
+    margin -1px 0 0
+    padding 3px 7px
+    background-color form-error-bg-color
+    color form-error-text-color
+    line-height 18px
+    font-size 14px
+    position absolute
+    top 100%
+    left 0
+    z-index 9
+
+    &:before
+      display block
+      content ''
+      width 0
+      height 0
+      border-style solid
+      border-width 0 5px 5px 5px
+      border-color transparent transparent form-error-border-color transparent
+      position absolute
+      left 10px
+      top -5px
+
+  &.has-error
+    .error-message
+      display inline-block
+
+.form-control
+  height 40px
+  padding 6px 10px
+  border 1px solid form-control-border-color
+  transition border-color ease-in-out .15s
+  border-radius 0
+  font-size 14px
+  line-height 18px
+  outline none
+  background-color form-control-bg-color
+  color form-control-text-color
+  box-shadow inset 0 1px 1px rgba(0,0,0,.075)
+
+  -webkit-appearance none
+  -moz-appearance none
+
+  &.form-control-file
+    padding 8px 10px
+
+  &:focus
+    border-color form-control-focus-border-color
+    box-shadow none
+    outline none
+
+  &:disabled,
+  &.disabled,
+  &[readonly]
+    background-color form-control-disabled-bg-color
+    border-color form-control-disabled-border-color
+    color form-control-disabled-text-color
+    box-shadow none
+
+    &:hover
+      background-color form-control-disabled-bg-color
+      border-color form-control-disabled-border-color
+      color form-control-disabled-text-color
+      box-shadow none
+
+.form-group
+  &.has-error
+    .form-control
+      border-color form-error-border-color
+      color form-error-border-color
+
+      &:hover
+        border-color form-error-border-color
+        color form-error-border-color
+
+select.form-control
+  padding 6px 30px 6px 10px
+
+  &.not-selected
+    color form-control-placeholder-color
+
+    option
+      color form-control-text-color
+
+    &:hover
+      color form-control-placeholder-color
+
+textarea.form-control
+  min-height 86px
+  resize none
+
+.custom-select
+  position relative
+
+  &:after
+    display block
+    content " "
+    width 0
+    height 0
+    border-left 4px solid transparent
+    border-right 4px solid transparent
+    border-top 7px solid form-control-text-color
+    margin -3px
+    position absolute
+    top 50%
+    right 18px
+    z-index 2
+    pointer-events none
+
+.form-group
+  &.has-error
+    .custom-select
+      &:after
+        border-top-color form-error-border-color
+
+.checkbox
+  margin 0
+  padding 10px 0 0 30px
+
+  label
+    display block
+    min-height 30px
+    position relative
+    padding 6px 0 6px 10px
+    font-size 14px
+    font-weight normal
+    line-height 18px
+    color form-checkbox-label-color
+
+    &:before
+      content ""
+      display inline-block
+      width 30px
+      height 30px
+      position absolute
+      left -30px
+      top 0
+      border 1px solid form-control-border-color
+      border-radius 0
+      background-color form-control-bg-color
+      box-shadow inset 0 1px 1px rgba(0,0,0,.075)
+      transition border 0.15s ease-in-out, color 0.15s ease-in-out
+
+    &:after
+      display inline-block
+      position absolute
+      width 30px
+      height 30px
+      left -30px
+      top 0
+      line-height 30px
+      text-align center
+      font-size 18px
+      border 1px solid form-checkbox-checked-border-color
+      background form-checkbox-checked-bg-color
+      color form-checkbox-checked-color
+
+  input[type="checkbox"]
+    width 30px
+    height 30px
+    margin 0 0 0 -30px
+    border 0
+    opacity 0
+    z-index 1
+    cursor pointer
+
+    &:disabled,
+    &.disabled,
+    &[readonly]
+      & + label:before
+      & + label:after
+        background-color form-control-disabled-bg-color
+        border-color form-control-disabled-border-color
+        color form-control-disabled-text-color
+        box-shadow none
+
+  input[type="checkbox"]:checked + label::after
+    font-family 'FontAwesome'
+    content '\f00c'
+
+.form-group
+  &.has-error
+    .checkbox
+      label
+        &:before
+          border-color form-error-border-color
+
+.radio
+  padding 0 0 0 30px
+
+  label
+    display block
+    min-height 30px
+    position relative
+    padding 6px 0 6px 10px
+    font-size 14px
+    font-weight normal
+    line-height 18px
+    color form-radio-label-color
+
+    &:before
+      display block
+      content ''
+      width 30px
+      height 30px
+      position absolute
+      left -30px
+      top 0
+      border 2px solid form-radio-border-color
+      border-radius 15px
+      background-color form-radio-bg-color
+      box-shadow inset 0 1px 1px rgba(0,0,0,.075)
+      transition border 0.15s ease-in-out, color 0.15s ease-in-out
+
+    &:after
+      display block
+      content ''
+      position absolute
+      width 16px
+      height 16px
+      left -23px
+      top 7px
+      background-color transparent
+      border-radius 8px
+      transition background-color 0.15s ease-in-out
+
+  input[type="radio"]
+    width 30px
+    height 30px
+    margin 0 0 0 -30px
+    border 0
+    opacity 0
+    z-index 1
+    cursor pointer
+
+  input[type="radio"]:checked + label
+    &:before
+      border-color form-radio-checked-border-color
+
+    &:after
+      background-color form-radio-checked-color
+
+.form-group
+  &.has-error
+    .radio
+      label
+        &:before
+          border-color form-error-border-color
+
+.radio-switch
+  margin 0
+  padding 5px
+  background-color btn-switch-bg-color
+  border 1px solid btn-switch-border-color
+  box-shadow inset 0 1px 1px rgba(0,0,0,0.075)
+  cursor pointer
+
+  &:after
+    display table
+    content ''
+    float none
+    clear both
+
+  .switch
+    display block
+    float left
+    width 50%
+    margin 0
+    position relative
+    cursor pointer
+
+    .text
+      display block
+      width 100%
+      padding 5px 15px
+      line-height 18px
+      font-size 14px
+      text-align center
+      background-color btn-switch-unchecked-bg-color
+      color btn-switch-unchecked-text-color
+
+    .form-control
+      display block
+      width 1px
+      height 1px
+      position absolute
+      left 0
+      top 0
+      opacity 0
+
+      &:checked ~ .text
+        background-color btn-switch-checked-bg-color
+        color btn-switch-checked-text-color
+
+.mega-option
+  display block
+  margin 0 0 10px
+  position relative
+  cursor pointer
+
+  &:last-child
+    margin 0
+
+  input[type="radio"]
+    width 30px
+    height 30px
+    margin 0
+    border 0
+    opacity 0
+    z-index 1
+    position absolute
+    left 16px
+    top 12px
+
+  .inner
+    display block
+    padding 8px 10px 8px 60px
+    background-color form-mega-option-bg-color
+    border 1px solid form-mega-option-border-color
+    border-radius 5px
+    position relative
+    transition background-color 0.15s ease-in-out
+
+    &:before
+      display block
+      content ''
+      width 30px
+      height 30px
+      position absolute
+      left 15px
+      top 11px
+      border 2px solid form-mega-option-radio-border-color
+      border-radius 15px
+      background-color form-mega-option-radio-bg-color
+      box-shadow inset 0 1px 1px rgba(0,0,0,.075)
+      transition border 0.15s ease-in-out, color 0.15s ease-in-out
+      z-index 2
+
+    &:after
+      display block
+      content ''
+      position absolute
+      width 16px
+      height 16px
+      left 22px
+      top 18px
+      background-color transparent
+      border-radius 8px
+      transition background-color 0.15s ease-in-out
+      z-index 3
+
+    .title
+      display block
+      line-height 19px
+      font-size 14px
+      font-weight 600
+      color form-mega-option-title-color
+
+    .text
+      display block
+      line-height 17px
+      font-size 13px
+      font-weight 400
+      color form-mega-option-text-color
+
+  input[type="radio"]:checked + .inner
+    background-color form-mega-option-checked-bg-color
+    border-color form-mega-option-checked-border-color
+
+    &:before
+      border-color form-mega-option-checked-radio-border-color
+      background-color form-mega-option-checked-radio-bg-color
+
+    &:after
+      background-color form-mega-option-checked-radio-dot-color
+
+    .title
+      color form-mega-option-checked-title-color
+
+    .text
+      color form-mega-option-checked-text-color
+
+.form-group
+  &.has-error
+    .mega-option
+      .inner
+        border-color form-error-border-color
+
+        &:before
+          border-color form-error-border-color
+
+.mobile-group
+  .mobile-fields
+    position relative
+    padding 0 0 0 95px
+
+    .prefix
+      width 45px
+      height 40px
+      padding 10px 0
+      text-align center
+      line-height 20px
+      font-size 15px
+      font-weight 700
+      background-color form-control-prefix-bg-color
+      color form-control-prefix-text-color
+      position absolute
+      left 0
+      top 0
+
+    .provider
+      width 50px
+      text-align center
+      border-top-right-radius 0
+      border-bottom-right-radius 0
+      position absolute
+      left 45px
+      top 0
+
+    .number
+      border-top-left-radius 0
+      border-bottom-left-radius 0
+
+.info-group
+  .form-group-right
+    padding-right 40px
+    position relative
+
+  .info
+    display block
+    width 100%
+    height 0
+    position absolute
+    right 0
+    bottom 40px
+
+    .info-text
+      display none
+      width 100%
+      padding 7px 10px
+      background-color form-info-tooltip-bg-color
+      color form-info-tooltip-text-color
+      position absolute
+      right 0
+      top 42px
+      z-index 1000
+
+      &:after
+        display block
+        content ''
+        width 0
+        height 0
+        border-style solid
+        border-width 0 5px 5px 5px
+        border-color transparent transparent form-info-tooltip-bg-color transparent
+        position absolute
+        right 10px
+        top -5px
+
+    .info-btn
+      display block
+      float right
+      width 30px
+      height 30px
+      line-height 30px
+      margin 5px 0
+      padding 0
+      border-radius 50%
+      color form-info-icon-color
+      text-align center
+      font-size 30px
+      cursor help
+
+      &:focus
+      &:hover
+        color form-info-icon-hover-color
+
+        & + .info-text
+          display block
+
+.postfix-group
+  .form-group-right
+    padding-right 45px
+    position relative
+
+  .postfix
+    display block
+    width 45px
+    height 40px
+    padding 10px 0
+    text-align center
+    line-height 20px
+    font-size 15px
+    font-weight 700
+    background-color form-control-prefix-bg-color
+    color form-control-prefix-text-color
+    position absolute
+    right 0
+    top 0
+
+.btn-switch
+  margin 0
+  padding 5px
+  background-color btn-switch-bg-color
+  border 1px solid btn-switch-border-color
+  box-shadow inset 0 1px 1px rgba(0,0,0,0.075)
+  cursor pointer
+
+  &:after
+    display table
+    content ''
+    float none
+    clear both
+
+  .text
+    display block
+    float left
+    width 50%
+    padding 5px 15px
+    line-height 18px
+    font-size 14px
+    font-weight 400
+    text-align center
+
+  .text-checked
+    background-color btn-switch-unchecked-bg-color
+    color btn-switch-unchecked-text-color
+
+  .text-unchecked
+    background-color btn-switch-checked-bg-color
+    color btn-switch-checked-text-color
+
+  input
+    display none
+
+    &:checked
+      ~.text-checked
+        background-color btn-switch-checked-bg-color
+        color btn-switch-checked-text-color
+
+      ~.text-unchecked
+        background-color btn-switch-unchecked-bg-color
+        color btn-switch-unchecked-text-color
+
+.custom-file
+  position relative
+
+  .form-control
+    width 1px
+    height 1px
+    padding 0
+    border 0
+    box-shadow none
+    position absolute
+    left 0
+    top 0
+
+  .form-control-label
+    display block
+    width 100%
+    height 40px
+    padding 10px 60px 10px 10px
+    border 1px solid form-control-border-color
+    transition border-color ease-in-out .15s
+    border-radius 0
+    font-size 14px
+    line-height 18px
+    outline none
+    background-color form-control-bg-color
+    box-shadow inset 0 1px 1px rgba(0,0,0,.075)
+    position relative
+    color form-control-placeholder-color
+    font-weight 400
+
+    &.selected
+      color form-control-text-color
+
+    .btn
+      width 50px
+      padding-right 0
+      padding-left 0
+      position absolute
+      right -1px
+      top -1px
+
+      .icon
+        margin-right 0
+
+      .text
+        display none
+
+.form-group
+  &.has-error
+    .custom-file
+      .form-control-label
+        border-color form-error-border-color
+        color form-error-border-color
+
+
+/* TABLET *************************************************************************************************************/
+@media (min-width: 768px)
+  .form-group
+    margin-bottom 15px
+
+  .form-horizontal
+    .control-label
+      padding-top 11px
+      padding-bottom 11px
+
+  .date-group
+    .form-group-right
+      &:after
+        display table
+        content ''
+        clear both
+        float none
+
+    .custom-select
+      float left
+
+      &.select-year
+        width 30%
+
+      &.select-month
+        width 45%
+
+      &.select-day
+        width 25%
+
+  .custom-file
+    .form-control-label
+      padding-right 110px
+
+      .btn
+        width 100px
+
+        .icon
+          display none
+
+        .text
+          display inline
+
+
+/* LARGE TABLET *******************************************************************************************************/
+@media (min-device-width: 992px) and (max-device-width: 1366px) and (min-device-height: 1024px) and (-webkit-min-device-pixel-ratio: 2)
+  .form-group
+    margin-bottom 30px
+
+    .control-label
+      margin-bottom 10px
+      line-height 30px
+      font-size 25px
+
+    .error-message
+      padding 5px 10px
+      line-height 30px
+      font-size 25px
+
+  .form-horizontal
+    .control-label
+      margin-bottom 0
+      padding 20px 15px
+
+  .form-control
+    height 70px
+    padding 18px 20px
+    border-width 2px
+    line-height 30px
+    font-size 25px
+    box-shadow inset 0 2px 2px rgba(0,0,0,.075)
+
+  textarea.form-control
+    min-height 160px
+
+  select.form-control
+    padding 18px 35px 18px 20px
+
+  .custom-select
+    &:after
+      border-width 10px 8px 0 8px
+      margin -5px 0 0
+      right 16px
+
+  .custom-file
+    .form-control-label
+      padding 18px 150px 18px 20px
+
+      .btn
+        width 130px
+        right -2px
+        top -2px
+
+  .checkbox
+    padding 0 0 0 50px
+    margin 20px 0
+
+    input[type="checkbox"]
+      width 50px
+      height 50px
+      margin 0 0 0 -50px
+
+    label
+      margin 0
+      padding 10px 0 10px 20px
+      line-height 30px
+      font-size 25px
+
+      &:before
+        width 50px
+        height 50px
+        border-width 2px
+        left -50px
+
+      &:after
+        width 50px
+        height 50px
+        border-width 2px
+        left -50px
+        line-height 46px
+        font-size 36px
+
+  .radio
+    padding 0 0 0 50px
+    margin 20px 0
+
+    input[type="radio"]
+      width 50px
+      height 50px
+      margin 0 0 0 -50px
+
+    label
+      margin 0
+      padding 10px 0 10px 20px
+      line-height 30px
+      font-size 25px
+
+      &:before
+        width 50px
+        height 50px
+        left -50px
+        border-radius 25px
+
+      &:after
+        width 24px
+        height 24px
+        border-radius 50%
+        left -37px
+        top 12px
+
+  .info-group
+    .form-group-right
+      padding-right 60px
+
+    .info
+      bottom 70px
+
+      .info-btn
+        width 60px
+        height 70px
+        line-height 70px
+        font-size 50px
+        margin 0
+        text-align right
+
+      .info-text
+        padding 12px 15px
+        top 74px
+
+        &:after
+          border-width 0 10px 10px 10px
+          right 11px
+          top -10px
+
+  .mobile-group
+    .mobile-fields
+      padding-left 140px
+
+      .prefix
+        width 70px
+        height 70px
+        padding 20px 0
+        line-height 30px
+        font-size 25px
+
+      .provider
+        width 70px
+        left 70px
+        border-right-width 1px
+
+      .number
+        border-left-width 1px
+
+  .postfix-group
+    .form-group-right
+      padding-right 70px
+
+    .postfix
+      width 70px
+      height 70px
+      padding 20px 0
+      line-height 30px
+      font-size 25px
+
+  .btn-switch
+    height 70px
+    border-width 2px
+    padding 10px
+
+    .text
+      padding 8px 20px
+      line-height 30px
+      font-size 25px
+
+  .mega-option
+    margin 0 0 20px
+
+    .inner
+      padding 20px 20px 20px 95px
+      border-width 2px
+      border-radius 10px
+
+      &:before
+        width 50px
+        height 50px
+        border-radius 50%
+        box-shadow inset 0 2px 2px rgba(0,0,0,.075)
+        left 22px
+        top 22px
+
+      &:after
+        width 24px
+        height 24px
+        border-radius 50%
+        left 35px
+        top 35px
+
+      .title
+        line-height 30px
+        font-size 25px
+
+      .text
+        line-height 26px
+        font-size 22px
