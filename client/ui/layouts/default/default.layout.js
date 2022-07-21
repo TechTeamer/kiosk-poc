@@ -1,4 +1,4 @@
-const pageSelectors = document.getElementsByClassName('page-selector')
+const pageSelectors = document.getElementsByClassName('btn-primary')
 
 for( let i = 0; i < pageSelectors.length; i++) {
     pageSelectors[i].addEventListener('click', () => {
