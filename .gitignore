@@ -4,6 +4,8 @@ node_modules/*
 /npm-debug.log*
 /yarn-error.log
 
+config/local.json
+
 # generated static files
 /web/css
 /web/js

@@ -1,4 +1,6 @@
 const {app, BrowserWindow, ipcMain, dialog} = require('electron')
+const config = require('./config')
+const Dictionary = require('./engines/translator/Dictionary')
 const path = require('path')
 const {DymoServices, createImageWithText} = require('node-dymo-printer')
 const ScaleService = require('./service/scaleService')
@@ -6,21 +8,24 @@ const twig = require('electron-twig')
 let mainWindow = null
 
 function createWindow () {
+    const dictPath = `${__dirname}/client/ui/pages/main/main.trans.js`
+    const t = Dictionary.load(dictPath, {})
+
     mainWindow = new BrowserWindow({
-        kiosk: false,
+        kiosk: config.get('kiosk'),
         webPreferences: {
             preload: path.join(__dirname, 'preload.js')
         }
     })
 
-    mainWindow.webContents.openDevTools();
+    if (config.get('devMode')) {
+        mainWindow.webContents.openDevTools();
+    }
 
     mainWindow.loadURL(`file://${__dirname}/client/ui/pages/main/main.html.twig`);
     twig.view = {
         staticDir: __dirname + '/web',
-        t: {
-            t: function () { return " " }
-        }
+        t
     }
 }
 

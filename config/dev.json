@@ -1,0 +1,9 @@
+{
+  "timezone": "Europe/Budapest",
+  "locales": {
+    "supported": ["hu", "en"],
+    "default": "hu"
+  },
+  "kiosk": true,
+  "devMode": false
+}
