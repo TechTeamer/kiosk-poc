@@ -5,5 +5,8 @@
     "default": "hu"
   },
   "kiosk": true,
-  "devMode": false
+  "devMode": false,
+  "url": {
+    "liveIdentification": "https://facekompont-css.facekomtest.net"
+  }
 }

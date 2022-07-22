@@ -27,6 +27,13 @@ function createWindow () {
         staticDir: __dirname + '/web',
         t
     }
+
+    mainWindow.webContents.on('will-navigate', (e, redirectUrl) => {
+        if (redirectUrl.endsWith('/logout')) {
+            e.preventDefault()
+            mainWindow.loadURL(`file://${__dirname}/client/ui/pages/main/main.html.twig`)
+        }
+    })
 }
 
 app.whenReady().then(() => {
@@ -128,9 +135,7 @@ function handleCallScale() {
 function handlePageChange(page) {
     switch(page) {
         case 'videochat':
-            mainWindow.loadURL(`https://css-kzs.facekomdev.net/`)
-            // mainWindow.loadURL('https://iteach.world')
-
+            mainWindow.loadURL(config.url.liveIdentification)
             break
         case 'subpage1':
             mainWindow.loadURL(`file://${__dirname}/client/ui/pages/subpage1/subpage1.html.twig`)
